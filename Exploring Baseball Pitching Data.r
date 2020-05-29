@@ -57,7 +57,9 @@ head(greinke)
 summary(factor(greinke$july))
 
 
-#***--------------------------------
+
+
+#***-----
 
 # VELOCITY DISTRIBUTION
 # Make a histogram of Greinke's start speed
@@ -79,3 +81,38 @@ hist(greinke_july$start_speed)
 
 # Plot start_speed histogram for other months
 hist(greinke_other$start_speed)
+
+
+
+
+
+#***----
+
+#FASTBALL VELOCITY DISTRIBUTION
+
+# Create july_ff
+july_ff <- subset(greinke_july, pitch_type == "FF")
+
+# Create other_ff
+other_ff <- subset(greinke_other, pitch_type == "FF")
+
+# Formatting code, don't change this
+par(mfrow = c(1, 2))
+
+# Plot histogram of July fastball speeds
+hist(july_ff$start_speed)
+
+# Plot histogram of other month fastball speeds
+hist(other_ff$start_speed)
+
+
+
+#****----
+
+#DISTRIBUTION COMPARISON WITH COLORS
+# Make a fastball speed histogram for other months
+hist(other_ff$start_speed,
+     col = "#00009950", freq = FALSE,
+     ylim = c(0, .35), xlab = "Velocity (mph)",
+     main = "Greinke 4-Seam Fastball Velocity")
+
