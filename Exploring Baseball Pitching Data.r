@@ -188,3 +188,14 @@ plot(ff_dt$start_speed ~ ff_dt$game_date,
      lwd = 4, type = "l", ylim = c(88, 95),
      main = 'Greinke 4-Seam Fastball Velocity',
      xlab = 'Date', ylab = 'Velocity (mph)')
+
+
+
+
+#***----
+
+# Adding jittered points
+
+# Add jittered points to the plot
+points(greinke_ff$start_speed ~ jitter(as.numeric(greinke_ff$game_date)),
+       pch = 16, col = "#99004450")
