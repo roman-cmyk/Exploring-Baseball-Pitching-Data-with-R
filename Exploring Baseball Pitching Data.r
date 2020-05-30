@@ -228,3 +228,42 @@ type_prop <- round(prop.table(type_tab, margin = 2), 3)
 
 # Print type_prop
 type_prop
+
+
+
+#***---- Pitch mix tables - July vs. other
+
+# Pitch mix tables - July vs. other
+
+# Create ff_prop
+ff_prop <- type_prop[3, ]
+
+# Print ff_prop
+ff_prop
+
+# Print ff_velo_month
+ff_velo_month
+
+
+
+#***----
+
+# Pitch mix tables - changes in pitch type rates
+
+# Create the Difference column
+type_prop$Difference <- (type_prop$July - type_prop$Other) / type_prop$Other
+
+# Print the type_prop
+type_prop
+
+# Create the Difference column
+type_prop$Difference <- (type_prop$July - type_prop$Other) / type_prop$Other
+
+# Print the type_prop
+type_prop
+
+# Plot a barplot
+barplot(type_prop$Difference, names.arg = type_prop$Pitch, 
+        main = "Pitch Usage in July vs. Other Months", 
+        ylab = "Percentage Change in July", 
+        ylim = c(-0.3, 0.3))
