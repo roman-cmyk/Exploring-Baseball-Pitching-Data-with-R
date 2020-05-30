@@ -199,3 +199,20 @@ plot(ff_dt$start_speed ~ ff_dt$game_date,
 # Add jittered points to the plot
 points(greinke_ff$start_speed ~ jitter(as.numeric(greinke_ff$game_date)),
        pch = 16, col = "#99004450")
+
+
+
+#***----
+
+# Pitch mix tables
+# Subset the data to remove pitch types "IN" and "EP"
+greinke <- subset(greinke, pitch_type != "IN" & pitch_type != "EP")
+
+# Drop the levels from pitch_type
+greinke$pitch_type <- droplevels(greinke$pitch_type)
+
+# Create type_tab
+type_tab <- table(greinke$pitch_type, greinke$july)
+
+# Print type_tab
+type_tab
