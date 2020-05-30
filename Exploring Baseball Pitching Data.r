@@ -116,3 +116,33 @@ hist(other_ff$start_speed,
      ylim = c(0, .35), xlab = "Velocity (mph)",
      main = "Greinke 4-Seam Fastball Velocity")
 
+# Add a histogram for July
+hist(july_ff$start_speed, add = TRUE,
+     col = "#99000050", freq = FALSE)
+
+# Draw vertical line at the mean of other_ff
+abline(v = mean(other_ff$start_speed),
+       col = "#00009950", lwd = 2)
+
+# Draw vertical line at the mean of july_ff
+abline(v = mean(july_ff$start_speed),
+       col = "#99000050", lwd = 2)
+
+
+#***----
+# tapply() for velocity changes
+
+# Summarize velocity in July and other months
+tapply(greinke$start_speed, greinke$july, mean)
+
+# Create greinke_ff
+greinke_ff <- subset(greinke, greinke$pitch_type == 'FF')
+
+
+# Calculate mean fastball velocities: ff_velo_month
+ff_velo_month <- tapply(greinke_ff$start_speed, greinke_ff$july, mean)
+
+# Print ff_velo_month
+ff_velo_month
+
+
