@@ -146,3 +146,13 @@ ff_velo_month <- tapply(greinke_ff$start_speed, greinke_ff$july, mean)
 ff_velo_month
 
 
+
+#***----
+# Game-by-game velocity changes
+
+# Create ff_dt
+ff_dt <- data.frame(tapply(greinke_ff$start_speed, greinke_ff$game_date, mean))
+
+# Print the first 6 rows of ff_dt
+head(ff_dt)
+
