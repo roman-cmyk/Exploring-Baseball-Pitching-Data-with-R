@@ -174,3 +174,17 @@ row.names(ff_dt) <- NULL
 
 # View head of ff_dt
 head(ff_dt)
+
+
+
+
+#***----
+
+# A game-by-game line plot
+
+# Plot game-by-game 4-seam fastballs
+par(mfrow = c(1, 1))
+plot(ff_dt$start_speed ~ ff_dt$game_date,
+     lwd = 4, type = "l", ylim = c(88, 95),
+     main = 'Greinke 4-Seam Fastball Velocity',
+     xlab = 'Date', ylab = 'Velocity (mph)')
