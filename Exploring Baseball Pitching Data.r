@@ -288,3 +288,14 @@ rowSums(bs_prop_table)
 
 # Print column sums
 colSums(bs_prop_table)
+
+
+#***-----
+
+# Make a new variable
+
+# Create bs_count
+greinke$bs_count <- paste(greinke$balls, greinke$strikes, sep = "-")
+
+# Print the first 6 rows of greinke
+head(greinke)
