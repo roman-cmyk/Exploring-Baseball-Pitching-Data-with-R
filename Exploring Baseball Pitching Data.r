@@ -267,3 +267,24 @@ barplot(type_prop$Difference, names.arg = type_prop$Pitch,
         main = "Pitch Usage in July vs. Other Months", 
         ylab = "Percentage Change in July", 
         ylim = c(-0.3, 0.3))
+
+
+
+#***----
+
+# Ball-strike count frequency
+
+# Create bs_table
+bs_table <- table(greinke$balls, greinke$strikes)
+
+# Create bs_prop_table
+bs_prop_table <- round(prop.table(bs_table), 3)
+
+# Print bs_prop_table
+bs_prop_table
+
+# Print row sums
+rowSums(bs_prop_table)
+
+# Print column sums
+colSums(bs_prop_table)
