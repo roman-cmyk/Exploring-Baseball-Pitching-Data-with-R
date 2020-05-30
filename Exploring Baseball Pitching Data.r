@@ -216,3 +216,15 @@ type_tab <- table(greinke$pitch_type, greinke$july)
 
 # Print type_tab
 type_tab
+
+
+
+#***----
+
+# Pitch mix table using prop.table()
+
+# # Create type_prop table
+type_prop <- round(prop.table(type_tab, margin = 2), 3)
+
+# Print type_prop
+type_prop
