@@ -156,3 +156,21 @@ ff_dt <- data.frame(tapply(greinke_ff$start_speed, greinke_ff$game_date, mean))
 # Print the first 6 rows of ff_dt
 head(ff_dt)
 
+
+
+
+#***----
+
+# Tidying the data frame
+
+# Create game_date in ff_dt
+ff_dt$game_date <- as.Date(row.names(ff_dt), "%Y-%m-%d")
+
+# Rename the first column
+colnames(ff_dt)[1] <- "start_speed"
+
+# Remove row names
+row.names(ff_dt) <- NULL
+
+# View head of ff_dt
+head(ff_dt)
